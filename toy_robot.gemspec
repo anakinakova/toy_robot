@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = ToyRobot::VERSION
   spec.authors       = ["Ana Djordjevic"]
   spec.email         = ["ana@oomphhq.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Toy robot simulator.}
+  spec.description   = %q{Simulator for a toy robot on a 5x5 grid.  The robot can read from standard in or a file.  Refer to README for instructions.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec"
 end

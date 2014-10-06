@@ -18,6 +18,8 @@ module ToyRobot
     end
 
     def place(x, y, f)
+      x = x.to_i
+      y = y.to_i
       if Robot.valid_f?(f) && Robot.valid_xy?(x, y)
         @position  = Complex(x, y)
         @direction = DIRECTIONS[f]
@@ -35,16 +37,18 @@ module ToyRobot
     end
 
     def left
+      return if @position.nil? || @direction.nil?
       @direction *= Complex(0, 1)
       debug_report
     end
 
     def right
+      return if @position.nil? || @direction.nil?
       @direction *= Complex(0, -1)
       debug_report
     end
 
-    def report
+    def get_position
       if @position.nil?
         INVALID_POSITION
       else
@@ -52,13 +56,13 @@ module ToyRobot
       end
     end
 
-    def print_report
-      p "Output: #{report}"
+    def report
+      print "Output: #{get_position}\n"
     end
 
     def debug_report
       if ENV['DEBUG']
-        print_report
+        report
       end
     end
 

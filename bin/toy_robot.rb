@@ -30,7 +30,6 @@ def parse_command(line)
 end
 
 def execute_command(robot, args)
-  p args
   if args.is_a? Array
     robot.send(*args)
   elsif args.is_a? String
@@ -45,7 +44,7 @@ robot = ToyRobot::Robot.new
 
 unless ARGV[0].nil?
   process_file(robot, ARGV[0])
-  return
+  exit 0
 end
 
 print "Interactive mode - enter commands one line at a time:\n"

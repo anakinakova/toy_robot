@@ -12,9 +12,13 @@ module ToyRobot
 
     INVALID_POSITION = "The robot is not in a valid position on the board."
 
-    def initialize
+    attr_accessor :input, :output
+
+    def initialize(input=STDIN, output=STDOUT)
       @position  = nil
       @direction = nil
+      @input     = input
+      @output    = output
     end
 
     def place(x, y, f)
@@ -57,7 +61,7 @@ module ToyRobot
     end
 
     def report
-      print "Output: #{get_position}\n"
+      output.print "Output: #{get_position}\n"
     end
 
     def debug_report

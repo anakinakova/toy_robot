@@ -71,7 +71,11 @@ module ToyRobot
     end
 
     def self.valid_xy? x, y
-      (0..4).to_a.include? [x, y].max
+      (self.valid_c? x) && (self.valid_c? y)
+    end
+
+    def self.valid_c? c
+      (0..4).to_a.include? c
     end
 
     private

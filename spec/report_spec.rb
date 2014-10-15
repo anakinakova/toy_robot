@@ -1,4 +1,4 @@
-describe "get_position" do
+describe "Report" do
   before :all do
     @robot = ToyRobot::Robot.new
     @robot.place(2, 3, 'EAST')
@@ -12,7 +12,12 @@ describe "get_position" do
   #
   # end
 
-  # it "writes to file if specified" do
-  #
-  # end
+  it "writes to file if specified" do
+    @robot.output = File.open('test_out.txt', 'w')
+    @robot.report
+    @robot.output.close
+    output = File.open('test_out.txt', 'r').read
+    expect(output).to eq "Output: 2,3,EAST\n"
+    system('rm test_out.txt')
+  end
 end

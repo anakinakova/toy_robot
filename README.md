@@ -47,6 +47,9 @@ Or install it yourself as:
     $ gem install toy_robot
 
 ## Usage
+The simulator can read from STDIN or a given file, and output to STDOUT or a given file.
+
+    $ toy_robot.rb [-i input_file] [-o output_file]
 
 Commands are of the following form:
 
